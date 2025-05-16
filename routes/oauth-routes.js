@@ -12,6 +12,7 @@ router.get('/logout', (req, res) => {
 })
 
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
+  console.log(req.user);
   res.render("google", { userName: req.user.userName, id: req.user.googleId });
 });
 
